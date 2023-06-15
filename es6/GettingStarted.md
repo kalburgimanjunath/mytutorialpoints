@@ -1,0 +1,3 @@
+ECMAScript 6 reached feature complete status in 2015 and was formally dubbed “ECMAScript 2015.” 
+
+In this chapter we learn about Block Bindings,Strings and Regular Expressions,Functions,Expanded Object Functionality,Destructuring,Symbols and Symbol Properties,Set, WeakSet, Map, and WeakMap,Iterators and Generators,JavaScript Classes,Improved Array Capabilities,Promises,Proxies and the Reflection API,Modules,
