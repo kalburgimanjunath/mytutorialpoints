@@ -13,33 +13,34 @@ function testing(){
 }
 `
 when you defind the variable using let the variable will be block scoped you cannt access the variable outside the block.
+`
 function testing(){
     console.log(abc); // reference error
     function testingInside(){
         let abc = 20;
     }
-}
+}`
 
 when you use const instead of let/var the value what you initialize will not change forever.
-function testing(){
+`function testing(){
     const abc = 10;
     function testingInside(){
         abc = 20; // error 
     }
-}
+}`
 
 ## Temporal Dead zone
 TDZ is where you try to access or assign value to variable which you cannt refer and change.In this example when you are trying to access the abc from testingInside() function using let will create a new variable which has difference reference so you cannt access abc which is defined from var inside testingInside() function this situation is called TDZ.
 
-function testing(){
+`function testing(){
     var abc = 10;
     function testingInside(){
         let abc = 20; // abc is block scoped
     }
-}
+}`
 
 ## Immediate Invocation function (IIFE)
-
+`
 var funcs = [];
 
 for (let i = 0; i < 10; i++) {
@@ -51,9 +52,10 @@ for (let i = 0; i < 10; i++) {
 funcs.forEach(function(func) {
     func();     // outputs 0, then 1, then 2, up to 9
 })
+`
 
 this can be solved with IIFE or using let instead of var in loop.
-
+`
 var funcs = [];
 
 for (var i = 0; i < 10; i++) {
@@ -67,3 +69,19 @@ for (var i = 0; i < 10; i++) {
 funcs.forEach(function(func) {
     func();     // outputs 0, then 1, then 2, up to 9
 });
+`
+
+with let
+`
+var funcs = [];
+
+for (let i = 0; i < 10; i++) {
+    funcs.push(function() {
+        console.log(i);
+    });
+}
+
+funcs.forEach(function(func) {
+    func();     // outputs 0, then 1, then 2, up to 9
+})
+`
